@@ -1,6 +1,6 @@
 import { Todo } from "@entities/todo.entity";
 import { ID } from "@entities/todo-types";
-import { Query } from "./query";
+import { Usecase } from "./usercase";
 
 export class TodoNotFoundException extends Error {
   name: string;
@@ -11,10 +11,12 @@ export class TodoNotFoundException extends Error {
 }
 
 export interface GetTodoByIdRepository {
-  findById(id: ID): Promise<Todo | null>;
+  findById(id: ID): Promise<Todo | void>;
 }
 
-export class GetTodoByIdQuery implements Query {
+export interface GetTodoByIdUsecase extends Usecase<ID, Todo> { }
+
+export class GetTodoByIdQuery implements GetTodoByIdUsecase {
 
   constructor(
     private readonly repository: GetTodoByIdRepository

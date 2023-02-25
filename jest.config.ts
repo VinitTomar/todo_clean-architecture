@@ -89,6 +89,9 @@ export default {
   moduleNameMapper: {
     "@entities/(.*)": "<rootDir>/src/entities/$1",
     "@usecases/(.*)": "<rootDir>/src/usecases/$1",
+    "@controllers/(.*)": "<rootDir>/src/controllers/$1",
+    "@infra/(.*)": "<rootDir>/src/infra/$1",
+    "@main/(.*)": "<rootDir>/src/main/$1",
     "@tests/(.*)": "<rootDir>/tests/$1"
   },
 

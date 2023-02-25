@@ -33,6 +33,15 @@
       "@usecases/*": [
         "usecases/*"
       ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@infra/*": [
+        "infra/*"
+      ],
+      "@main/*": [
+        "main/*"
+      ],
       "@tests/*": [
         "../tests/*"
       ]

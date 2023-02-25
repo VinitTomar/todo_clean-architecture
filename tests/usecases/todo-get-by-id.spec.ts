@@ -4,7 +4,7 @@ import { Todo } from "@entities/todo.entity";
 import { buildFakeTodo } from "@tests/entities/mocks/todo.entity";
 
 class TodoRepository implements GetTodoByIdRepository {
-  async findById(id: ID): Promise<Todo | null> {
+  async findById(id: ID): Promise<Todo | void> {
     return buildFakeTodo();
   }
 
@@ -27,7 +27,7 @@ describe('Todo get by id test', () => {
   });
 
   it('should throw TodoNotFoundException when repository return Null', async () => {
-    jest.spyOn(repository, 'findById').mockResolvedValueOnce(null);
+    jest.spyOn(repository, 'findById').mockResolvedValueOnce();
 
     const t = async () => {
       await query.run('abc');
