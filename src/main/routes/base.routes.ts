@@ -20,9 +20,9 @@ export class BaseRoutes {
         } = await controller.handle(controllerRequest);
 
         if (status >= 200 && status < 300) {
-          res.send(status).json(payload);
+          res.status(status).json(payload);
         } else if (status >= 400 && status < 500) {
-          res.send(status).json(error);
+          res.status(status).json(error);
         }
       } catch (error) {
         res.status(500).send('Something went wrong. Please try after sometime.')
