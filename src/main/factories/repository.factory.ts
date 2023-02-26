@@ -6,16 +6,7 @@ export class RepositoryFactory {
 
   static buildInMmTodoRepository(): TodoRepository {
     if (!this.inMmrepository) {
-      this.inMmrepository = new InMmTodoRepository([
-        {
-          id: '123',
-          title: 'Some title',
-          description: 'Some description',
-          status: 'In-progress',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        }
-      ]);
+      this.inMmrepository = new InMmTodoRepository([]);
     }
 
     return this.inMmrepository;
