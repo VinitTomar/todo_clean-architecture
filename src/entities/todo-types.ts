@@ -1,2 +1,8 @@
-export type TodoStatus = 'Todo' | 'In-progress' | 'Completed' | 'Archived';
+export enum TodoStatus {
+  TODO = 'Todo',
+  IN_PROGRESS = 'In-progress',
+  COMPLETED = 'Completed',
+  ARCHIVED = 'Archived',
+}
+
 export type ID = string | number;

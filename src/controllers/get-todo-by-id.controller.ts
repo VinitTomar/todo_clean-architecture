@@ -35,7 +35,7 @@ export class GetTodoByIdController implements Controller<
         }
       }
 
-      throw new Error();
+      throw error;
     }
   }
 }
