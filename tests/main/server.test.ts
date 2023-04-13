@@ -1,3 +1,4 @@
+import { TodoStatus } from '@entities/todo-types';
 import { Express } from 'express';
 import request from 'supertest';
 import { RepositoryFactory } from '@main/factories/repository.factory';
@@ -18,7 +19,7 @@ describe('Test server', () => {
         id: '123',
         title: 'Some title',
         description: 'Some description',
-        status: 'In-progress',
+        status: TodoStatus.IN_PROGRESS,
         createdAt: new Date(),
         updatedAt: new Date(),
       }

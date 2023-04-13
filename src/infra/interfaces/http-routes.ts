@@ -8,10 +8,12 @@ export enum HttpMethods {
   DELETE
 }
 
+export type HttpController = (new (usecase: Usecase) => Controller);
+
 export interface HttpRoute {
   path: string;
   method: HttpMethods,
-  controller: (new (usecase: Usecase) => Controller)
+  controller: HttpController
 }
 
 export type HttpRoutes = HttpRoute[];

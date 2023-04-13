@@ -8,6 +8,10 @@ export class InMmTodoRepository implements TodoRepository {
     private todos: Todo[] = []
   ) { }
 
+  async persist(todo: Todo): Promise<void> {
+    this.todos.push(todo);
+  }
+
   async findById(id: ID): Promise<Todo | void> {
     const todo = this.todos.find(td => td.id === id);
     return todo;
